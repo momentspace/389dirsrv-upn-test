@@ -1,0 +1,12 @@
+dn: uid=tarou,ou=users,dc=test,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+uid: tarou
+cn: Tarou Yamada
+sn: Yamada
+givenName: Tarou
+mail: tarou@test.com
+#userPassword: {SSHA}dFY00zujad854kyO7/60Dq9raFENGH1/
+userPassword: password

@@ -1,0 +1,12 @@
+#dn: o=org,dc=example,dc=com
+#objectClass: top
+#objectClass: organization
+#o: org 
+#description: Example Organization
+
+dn: ou=users,dc=test,dc=com
+changetype: add
+objectClass: top
+objectClass: organizationalUnit
+ou: users 
+

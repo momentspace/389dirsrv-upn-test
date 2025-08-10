@@ -1,0 +1,11 @@
+# rootdn
+dn: dc=test,dc=com
+objectClass: top
+objectClass: domain
+dc: test
+
+# ou
+dn: ou=users,dc=test,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: users

@@ -1,0 +1,23 @@
+dn: cn=addn,cn=plugins,cn=config
+changetype: add
+objectClass: top
+objectClass: nsSlapdPlugin
+objectClass: extensibleObject
+cn: addn
+nsslapd-pluginPath: libaddn-plugin
+nsslapd-pluginInitfunc: addn_init
+nsslapd-pluginType: preoperation
+nsslapd-pluginEnabled: on
+nsslapd-pluginId: addn
+nsslapd-pluginVendor: 389 Project
+nsslapd-pluginVersion: 1.3.6.0
+nsslapd-pluginDescription: Allow AD DN style bind names to LDAP
+addn_default_domain: example.com
+
+dn: cn=example.com,cn=addn,cn=plugins,cn=config
+changetype: add
+objectClass: top
+objectClass: extensibleObject
+cn: example.com
+addn_base: ou=People,dc=example,dc=com
+addn_filter: (&(objectClass=account)(uid=%s))

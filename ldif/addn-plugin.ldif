@@ -1,0 +1,24 @@
+dn: cn=addn,cn=plugins,cn=config
+changetype: add
+objectClass: top
+objectClass: nsSlapdPlugin
+objectClass: extensibleObject
+cn: addn
+nsslapd-pluginPath: libaddn-plugin
+nsslapd-pluginInitfunc: addn_init
+nsslapd-pluginType: preoperation
+nsslapd-pluginEnabled: on
+nsslapd-pluginId: addn
+nsslapd-pluginVendor: 389 Project
+nsslapd-pluginVersion: 1.3.6.0
+nsslapd-pluginDescription: AD DN Bind Plugin (addn)
+addn_default_domain: test.com
+
+dn: cn=test.com,cn=addn,cn=plugins,cn=config
+changetype: add
+objectClass: top
+objectClass: extensibleObject
+cn: test.com
+addn_base: ou=users,dc=test,dc=com
+addn_filter: (&(objectClass=inetOrgPerson)(uid=%s))
+

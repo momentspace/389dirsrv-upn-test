@@ -1,0 +1,14 @@
+services:
+  389ds:
+    image: rockylinux:9
+    container_name: 389ds_test
+    privileged: true  # root権限が必要な場合があるので付けておく
+    ports:
+      - "389:389"    # LDAP標準ポートをホストに公開
+    volumes:
+#      - ./data:/var/lib/dirsrv  # 永続化用ボリューム（ホストの ./data にLDAPデータを保存）
+      - ./config:/etc/dirsrv    # 設定ファイル永続化用（必要に応じて）
+      - ./ldif:/ldif
+    tty: true
+    stdin_open: true
+    command: /bin/bash
